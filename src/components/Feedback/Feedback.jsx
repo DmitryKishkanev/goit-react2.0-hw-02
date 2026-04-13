@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
+import style from './Feedback.module.css';
 
 export default function Feedback({ options, values, total, positiveFeedback }) {
   return (
-    <ul>
+    <ul className={style.feedbackList}>
       {options.map(option => (
-        <li key={option}>
-          {option}: {values[option.toLowerCase()]}
+        <li className={style.feedbackItem} key={option}>
+          <span>{option}:</span> <span>{values[option.toLowerCase()]}</span>
         </li>
       ))}
-      <li>Total: {total}</li>
-      <li>Positive: {positiveFeedback}</li>
+      <li className={style.feedbackItem}>
+        Total: <span>{total}</span>
+      </li>
+      <li className={style.feedbackItem}>
+        Positive: <span>{positiveFeedback}</span>
+      </li>
     </ul>
   );
 }

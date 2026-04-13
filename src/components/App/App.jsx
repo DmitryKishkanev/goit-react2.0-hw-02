@@ -3,7 +3,7 @@ import Description from '../Description';
 import Options from '../Options';
 import Feedback from '../Feedback';
 import Notification from '../Notification';
-import style from '@/components/App/App.module.css';
+import style from './App.module.css';
 
 export default function App() {
   const [reviews, setReviews] = useState(() => {

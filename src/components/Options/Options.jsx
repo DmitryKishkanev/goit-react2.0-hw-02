@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import style from './Options.module.css';
 
 export default function Options({
   options,
@@ -7,7 +8,7 @@ export default function Options({
   onReset,
 }) {
   return (
-    <div>
+    <div className={style.container}>
       {options.map(option => (
         <button
           type="button"
@@ -20,7 +21,7 @@ export default function Options({
         </button>
       ))}
       {showReset && (
-        <button type="button" onClick={onReset}>
+        <button className={style.reset} type="button" onClick={onReset}>
           Reset
         </button>
       )}
